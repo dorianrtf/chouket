@@ -110,6 +110,3 @@ function showResult(food) {
     `;
   }, 300); // 300ms
 }
-
-
-

@@ -1,77 +1,154 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chouket</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title & description (SEO) -->
+        <title data-i18n="head_title">Chouket – Don’t guess, check!</title>
+        <meta name="description" data-i18n="head_description" content="Chouket helps you check food safety for pets and provides simple tools like age calculators and nutrition helpers. Free and easy to use.">
 
-</head>
-<body>
-    <div id="header-container"></div>
+        <!-- Language (default, can be changed dynamically) -->
+        <meta http-equiv="Content-Language" content="en">
 
-    <div class="text-center">
-        <img class="img-fluid d-block mx-auto mb-4" src="img/header.png" alt="">
-        <h1 class="display-5 fw-bold text-body-emphasis" data-i18n="title">Can your pet eat this food?</h1>
-        <div class="col-lg-6 mx-auto">
-            <p class="lead mb-4" data-i18n="subtitle">Quickly check if an ingredient is safe for your pets and access handy tools for their care.</p>
-            <div class="d-grid gap-2 justify-content-sm-center">
-                <!-- Onglets animaux -->
-                <ul class="nav nav-tabs justify-content-center mb-3" id="animalTabs" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" data-animal="chien" type="button" role="tab" aria-selected="true">🐶 Chien</button>
+        <!-- Theme color (mobile browsers) -->
+        <meta name="theme-color" content="#ffffff">
+
+        <!-- Open Graph (sharing) -->
+        <meta property="og:title" content="Chouket – Don’t guess, check!">
+        <meta property="og:description" content="Check if foods are safe for your pet and use simple, free tools.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://chouket.com">
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Chouket – Don’t guess, check!">
+        <meta name="twitter:description" content="Free tools to help you care for your pets safely.">
+
+        <!-- Favicon -->
+        <link rel="icon" href="/favicon.ico">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <!-- Custom css -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body class="d-flex flex-column min-vh-100">
+        <div id="header-container"></div>
+        <main class="flex-grow-1">
+            <div class="text-center">
+                <img class="img-fluid d-block w-100 mx-auto mb-4 object-fit-cover" style="max-height: 30vh;" src="img/header.png" alt="Illustration of pets: dog, cat and hamster">
+                <h1 class="display-5 fw-bold text-body-emphasis" data-i18n="title">Can your pet eat this food?</h1>
+                <div class="col-lg-6 mx-auto">
+                    <p class="lead mb-4" data-i18n="subtitle">Quickly check if an ingredient is safe for your pets and access handy tools for their care.</p>
+                </div>
+                <div class="justify-content-center">
+                        <!-- Onglets animaux -->
+                        <ul class="nav nav-tabs nav-fill justify-content-center mb-3" id="animalTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" data-animal="chien" type="button" role="tab" aria-selected="true">🐶 Chien</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" data-animal="chat" type="button" role="tab" aria-selected="false">🐱 Chat</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" data-animal="rongeurs" type="button" role="tab" aria-selected="false">🐹 Rongeurs</button>
+                            </li>
+                        </ul>
+
+
+                        <!-- Recherche -->
+                        <div class="container">
+                            <div class="position-relative">
+                                <div class="input-group">
+                                    <span class="input-group-text">🔍</span>
+                                    <input
+                                    type="text"
+                                    id="foodInput"
+                                    class="form-control form-control-lg"
+                                    placeholder="Cherchez un aliment"
+                                    autocomplete="off"
+                                    >
+                                </div>
+                                <div id="suggestions" class="list-group position-absolute w-100 mt-1 shadow-sm on-the-top"></div>
+                            </div>
+                        </div>
+                        <!-- Résultat -->
+                        <div id="result" class="container mt-3"></div>
+                        
+                    </div>
+            </div>   
+        </main>
+
+        <footer class="border-top mt-5">
+        <div class="container py-4">
+            <div class="row align-items-center gy-3">
+
+            <!-- Col gauche : infos -->
+            <div class="col-md-6 text-center text-md-start">
+                <strong>CHOUKET 🐾</strong><br>
+                <small class="text-muted">
+                Helping pet owners make safe food choices.<br>
+                © 2026 – All rights reserved.
+                </small>
+            </div>
+
+            <!-- Col centre : navigation -->
+            <div class="col-md-4 text-center">
+                <ul class="nav justify-content-center gap-2 small">
+                <li class="nav-item">
+                    <a href="legal.html" class="nav-link px-2 text-muted" data-i18n="legal">Legal notice</a>
                 </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" data-animal="chat" type="button" role="tab" aria-selected="false">🐱 Chat</button>
+                <li class="nav-item">
+                    <a href="privacy.html" class="nav-link px-2 text-muted" data-i18n="privacy">Privacy policy</a>
                 </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" data-animal="rongeurs" type="button" role="tab" aria-selected="false">🐹 Rongeurs</button>
+                <li class="nav-item">
+                    <a href="terms.html" class="nav-link px-2 text-muted" data-i18n="terms">Terms of use</a>
                 </li>
                 </ul>
-
-
-                <!-- Recherche -->
-                <div class="container">
-                    <div class="position-relative">
-                        <input
-                        type="text"
-                        id="foodInput"
-                        class="form-control form-control-lg"
-                        placeholder="Cherchez un aliment"
-                        autocomplete="off"
-                        >
-                        <div id="suggestions" class="list-group position-absolute w-100 mt-1 shadow-sm on-the-top"></div>
-                    </div>
-                </div>
-                <!-- Résultat -->
-                <div id="result" class="container mt-3"></div>
-                
             </div>
-        </div> 
-    </div>
-  
-  
 
+            <!-- Col droite : langues -->
+            <div class="col-md-2 text-center text-md-end">
+                <div class="btn-group" role="group" aria-label="Language selector">
+                <button
+                    class="btn btn-outline-secondary btn-sm"
+                    data-lang="fr"
+                    title="Français"
+                    onclick="setLanguage('fr')"
+                >🇫🇷</button>
 
+                <button
+                    class="btn btn-outline-secondary btn-sm"
+                    data-lang="en"
+                    title="English"
+                    onclick="setLanguage('en')"
+                >🇬🇧</button>
 
+                <button
+                    class="btn btn-outline-secondary btn-sm"
+                    data-lang="es"
+                    title="Español"
+                    onclick="setLanguage('es')"
+                >🇪🇸</button>
 
+                <button
+                    class="btn btn-outline-secondary btn-sm"
+                    data-lang="de"
+                    title="Deutsch"
+                    onclick="setLanguage('de')"
+                >🇩🇪</button>
+                </div>
+            </div>
 
-<footer class="d-flex justify-content-center align-items-center py-3 border-top">
-  <div class="btn-group" role="group" aria-label="Sélecteur de langue">
-    <button type="button" class="btn btn-outline-secondary btn-sm" onclick="setLanguage('fr')">🇫🇷</button>
-    <button type="button" class="btn btn-outline-secondary btn-sm" onclick="setLanguage('en')">🇬🇧</button>
-    <button type="button" class="btn btn-outline-secondary btn-sm" onclick="setLanguage('es')">🇪🇸</button>
-    <button type="button" class="btn btn-outline-secondary btn-sm" onclick="setLanguage('de')">🇩🇪</button>
-  </div>
-</footer>
+            </div>
+        </div>
+        </footer>
 
-
-
-
-  <script src="js/header.js"></script>
-  <script src="js/lang.js"></script>
-  <script src="js/search.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-</body>
+        <script src="js/header.js"></script>
+        <script src="js/lang.js"></script>
+        <script src="js/search.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    </body>
 </html>
