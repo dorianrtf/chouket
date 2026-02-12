@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+body{
+  font-family: "Lexend", sans-serif;
+  font-optical-sizing: auto;
+  /*font-weight: <weight>;*//*de 100 à 900*/
+  font-style: normal;
+}
+
+.on-the-top {
+  z-index:1000;
+}

@@ -1,0 +1,32 @@
+{
+  "fr": {
+    "home":"Accueil",
+    "title": "Votre animal peut-il manger cet aliment ?",
+    "subtitle": "Vérifiez rapidement si un ingrédient est sans danger pour vos animaux.",
+    "primaryBtn": "Vérifier un aliment",
+    "secondaryBtn": "Outils"
+  },
+  "en": {
+    "home":"Home",
+    "title": "Can your pet eat this food?",
+    "subtitle": "Quickly check if an ingredient is safe for your pets and access handy tools for their care.",
+    "primaryBtn": "Check a food",
+    "secondaryBtn": "Tools"
+  },
+  
+  "es": {
+    "home":"No lo sé",
+    "title": "¿Puede tu mascota comer este alimento?",
+    "subtitle": "Comprueba rápidamente si un ingrediente es seguro para tus mascotas.",
+    "primaryBtn": "Comprobar alimento",
+    "secondaryBtn": "Herramientas"
+  },
+  "de": {
+    "home":"Home",
+    "title": "Can your pet eat this food?",
+    "subtitle": "Quickly check if an ingredient is safe for your pets and access handy tools for their care.",
+    "primaryBtn": "Check a food",
+    "secondaryBtn": "Tools"
+  }
+  
+}
