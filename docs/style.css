@@ -9,3 +9,41 @@ body{
 .on-the-top {
   z-index:1000;
 }
+
+/* Base : nav horizontal, pas de wrap pour les très petits écrans */
+header .nav {
+  flex-wrap: nowrap;          /* Pas de retour à la ligne */
+  justify-content: center;    /* Centrer les nav pills */
+  overflow-x: hidden;         /* Pas de scroll horizontal */
+}
+
+/* Les nav-items se répartissent équitablement */
+header .nav-item {
+  flex: 1 1 auto;             /* chaque item prend la même largeur */
+  text-align: center;         /* texte centré */
+}
+
+/* Medium screens : logo au-dessus */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;   /* logo au-dessus */
+    align-items: center;
+  }
+  header a {
+    margin-bottom: 0.5rem;
+  }
+  header .nav {
+    width: 100%;              /* occupe toute la largeur */
+  }
+}
+
+/* Très petit écran : forcer nav sur une ligne sans scroll */
+@media (max-width: 296px) {
+  header .nav {
+    font-size: 0.75rem;       /* réduire légèrement le texte si nécessaire */
+  }
+  header .nav-item {
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+  }
+}
