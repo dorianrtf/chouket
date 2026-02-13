@@ -23,6 +23,10 @@ header .nav-item {
   text-align: center;         /* texte centré */
 }
 
+header .nav-link {
+  white-space: nowrap;       /* pas de retour à la ligne */
+}
+
 /* Medium screens : logo au-dessus */
 @media (max-width: 768px) {
   header {
@@ -45,5 +49,10 @@ header .nav-item {
   header .nav-item {
     padding-left: 0.2rem;
     padding-right: 0.2rem;
+  }
+  header .nav-link {
+    font-size: 0.7rem;       /* ajustable selon besoin */
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
   }
 }
