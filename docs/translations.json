@@ -1,35 +1,80 @@
 {
   "fr": {
-    "head_title":"Chouket – Don’t guess, check!",
-    "head_description":"Chouket helps you check food safety for pets and provides simple tools like age calculators and nutrition helpers. Free and easy to use.",
-    "head_description":"Chouket – ",
-    "home":"Accueil",
+    "head_title":"Chouket – Un doute ? Chouket !",
+    "head_description":"Chouket vous aide à vérifier si les aliments sont sans danger pour vos animaux et met à votre disposition des outils simples : calculateur d’âge, aide à la nutrition, et plus encore. Gratuit et facile à utiliser.",
+    "header_home":"Accueil",
+    "header_category":"Catégories",
+    "header_tools":"Outils",
+    "header_about":"A propos",
     "title": "Votre animal peut-il manger cet aliment ?",
     "subtitle": "Vérifiez rapidement si un ingrédient est sans danger pour vos animaux.",
-    "primaryBtn": "Vérifier un aliment",
-    "secondaryBtn": "Outils"
+    "dog_tab": "🐶 Chien",
+    "cat_tab": "🐱 Chat",
+    "rodents_tab": "🐹 Rongeurs",
+    "footer_copyright": "Tout droits réservés",
+    "footer_slogan": "Un doute ? Chouket !",
+    "footer_legalnotice":"Mentions légales",
+    "footer_privacy":"Politique de confidentialité",
+    "footer_terms":"Termes d'utilisation"
   },
+
   "en": {
-    "home":"Home",
-    "title": "Can your pet eat this food?",
-    "subtitle": "Quickly check if an ingredient is safe for your pets and access handy tools for their care.",
-    "primaryBtn": "Check a food",
-    "secondaryBtn": "Tools"
-  },
+  "head_title": "Chouket – Unsure? Chouket!",
+  "head_description": "Chouket helps you check whether foods are safe for your pets and provides simple tools such as age calculators, nutrition helpers, and more. Free and easy to use.",
+  "header_home": "Home",
+  "header_category": "Categories",
+  "header_tools": "Tools",
+  "header_about": "About",
+  "title": "Can your pet eat this food?",
+  "subtitle": "Quickly check whether an ingredient is safe for your pets.",
+  "dog_tab": "🐶 Dog",
+  "cat_tab": "🐱 Cat",
+  "rodents_tab": "🐹 Rodents",
+  "footer_copyright": "All rights reserved",
+  "footer_slogan": "Unsure? Chouket!",
+  "footer_legalnotice": "Legal notice",
+  "footer_privacy": "Privacy policy",
+  "footer_terms": "Terms of use"
+}
+,
   
   "es": {
-    "home":"No lo sé",
-    "title": "¿Puede tu mascota comer este alimento?",
-    "subtitle": "Comprueba rápidamente si un ingrediente es seguro para tus mascotas.",
-    "primaryBtn": "Comprobar alimento",
-    "secondaryBtn": "Herramientas"
-  },
+  "head_title": "Chouket – ¿Dudas? ¡Chouket!",
+  "head_description": "Chouket te ayuda a comprobar si los alimentos son seguros para tus mascotas y ofrece herramientas simples como calculadoras de edad, ayudas nutricionales y más. Gratis y fácil de usar.",
+  "header_home": "Inicio",
+  "header_category": "Categorías",
+  "header_tools": "Herramientas",
+  "header_about": "Acerca de",
+  "title": "¿Tu mascota puede comer este alimento?",
+  "subtitle": "Comprueba rápidamente si un ingrediente es seguro para tus mascotas.",
+  "dog_tab": "🐶 Perro",
+  "cat_tab": "🐱 Gato",
+  "rodents_tab": "🐹 Roedores",
+  "footer_copyright": "Todos los derechos reservados",
+  "footer_slogan": "¿Dudas? ¡Chouket!",
+  "footer_legalnotice": "Aviso legal",
+  "footer_privacy": "Política de privacidad",
+  "footer_terms": "Términos de uso"
+},
+
   "de": {
-    "home":"Home",
-    "title": "Can your pet eat this food?",
-    "subtitle": "Quickly check if an ingredient is safe for your pets and access handy tools for their care.",
-    "primaryBtn": "Check a food",
-    "secondaryBtn": "Tools"
-  }
+  "head_title": "Chouket – Zweifel? Chouket!",
+  "head_description": "Chouket hilft dir zu überprüfen, ob Lebensmittel für deine Haustiere sicher sind, und bietet einfache Tools wie Altersrechner, Ernährungshelfer und mehr. Kostenlos und einfach zu benutzen.",
+  "header_home": "Startseite",
+  "header_category": "Kategorien",
+  "header_tools": "Tools",
+  "header_about": "Über uns",
+  "title": "Kann Ihr Haustier dieses Lebensmittel essen?",
+  "subtitle": "Überprüfen Sie schnell, ob eine Zutat für Ihre Haustiere unbedenklich ist.",
+  "dog_tab": "🐶 Hund",
+  "cat_tab": "🐱 Katze",
+  "rodents_tab": "🐹 Nagetiere",
+  "footer_copyright": "Alle Rechte vorbehalten",
+  "footer_slogan": "Zweifel? Chouket!",
+  "footer_legalnotice": "Rechtliche Hinweise",
+  "footer_privacy": "Datenschutz",
+  "footer_terms": "Nutzungsbedingungen"
+}
+
   
 }

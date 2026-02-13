@@ -99,14 +99,52 @@ function showResult(food) {
       return;
     }
 
-    let colorClass = "text-danger";
-    if (animalData.status === "OK") colorClass = "text-success";
-    else if (animalData.status === "LIMITER") colorClass = "text-warning";
+    let colorClass = "danger";
+    if (animalData.status === "OK") colorClass = "success";
+    else if (animalData.status === "LIMITER") colorClass = "warning";
 
     resultDiv.innerHTML = `
-      <h4 class="${colorClass}">${food.name}</h4>
-      <p>Status : <strong>${animalData.status}</strong></p>
-      <p>${animalData.details}</p>
-    `;
+  <div class="card mb-3 shadow-sm border-${colorClass}">
+    <div class="card-header">
+      <div class="d-flex justify-content-between align-items-center">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item">${food.category}</li>
+            ${
+              food.subCategory
+                ? `<li class="breadcrumb-item">${food.subCategory}</li>`
+                : ""
+            }
+
+            ${
+              food.subSubCategory
+                ? `<li class="breadcrumb-item">${food.subSubCategory}</li>`
+                : ""
+            }
+
+            <li class="breadcrumb-item active" aria-current="page">
+              ${food.name}
+            </li>
+          </ol>
+        </nav>
+
+        <span class="badge bg-${colorClass}">
+          ${animalData.status}
+        </span>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <h4 class="card-title mb-0 text-${colorClass}">
+        ${food.name}
+      </h4>
+
+      <p class="card-text">
+        ${animalData.details}
+      </p>
+    </div>
+  </div>
+`;
+
   }, 300); // 300ms
 }

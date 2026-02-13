@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const href = link.getAttribute("href").replace("/", "");
         if (href === currentPath) link.classList.add("active");
       });
+      setLanguage(currentLang);
     })
     .catch(err => console.error("Erreur chargement header :", err));
 });

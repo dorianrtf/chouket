@@ -2,6 +2,8 @@
   {
     "name": "Chocolat",
     "category": "Sucrerie",
+    "subCategory": "Confiserie",
+    "subSubCategory": null,
     "animalStatus": {
       "chien": { "status": "TOXIQUE", "details": "Risque d’intoxication grave" },
       "chat": { "status": "TOXIQUE", "details": "Très dangereux même en petite dose" },
@@ -11,6 +13,8 @@
   {
     "name": "Pomme",
     "category": "Fruit",
+    "subCategory": "Fruit frais",
+    "subSubCategory": "Fruit à pépins",
     "animalStatus": {
       "chien": { "status": "OK", "details": "Retirer les pépins" },
       "chat": { "status": "LIMITER", "details": "En très petite quantité" },
@@ -20,6 +24,8 @@
   {
     "name": "Oignon",
     "category": "Légume",
+    "subCategory": "Légume aromatique",
+    "subSubCategory": "Alliacées",
     "animalStatus": {
       "chien": { "status": "TOXIQUE", "details": "Détruit les globules rouges" },
       "chat": { "status": "TOXIQUE", "details": "Extrêmement dangereux" },
@@ -29,6 +35,8 @@
   {
     "name": "Carotte",
     "category": "Légume",
+    "subCategory": "Légume racine",
+    "subSubCategory": null,
     "animalStatus": {
       "chien": { "status": "OK", "details": "Couper en petits morceaux" },
       "chat": { "status": "LIMITER", "details": "Occasionnellement" },
@@ -38,6 +46,8 @@
   {
     "name": "Raisin",
     "category": "Fruit",
+    "subCategory": "Fruit frais",
+    "subSubCategory": "Fruit en grappe",
     "animalStatus": {
       "chien": { "status": "TOXIQUE", "details": "Peut provoquer insuffisance rénale" },
       "chat": { "status": "TOXIQUE", "details": "Très dangereux" },
@@ -47,6 +57,8 @@
   {
     "name": "Fromage",
     "category": "Produit laitier",
+    "subCategory": "Fromage",
+    "subSubCategory": "Lait de vache",
     "animalStatus": {
       "chien": { "status": "LIMITER", "details": "Peut causer troubles digestifs" },
       "chat": { "status": "LIMITER", "details": "Occasionnellement" },
@@ -56,6 +68,8 @@
   {
     "name": "Pain",
     "category": "Céréales",
+    "subCategory": "Produits céréaliers",
+    "subSubCategory": "Pain",
     "animalStatus": {
       "chien": { "status": "LIMITER", "details": "Sans levure et en petites quantités" },
       "chat": { "status": "LIMITER", "details": "Occasionnellement" },
@@ -65,73 +79,34 @@
   {
     "name": "Lait",
     "category": "Produit laitier",
+    "subCategory": "Lait",
+    "subSubCategory": "Lait animal",
     "animalStatus": {
       "chien": { "status": "LIMITER", "details": "Certains chiens sont intolérants" },
-      "chat": { "status": "LIMITER", "details": "De préférence lait sans lactose" },
+      "chat": { "status": "LIMITER", "details": "De préférence sans lactose" },
       "rongeurs": { "status": "OK", "details": "Pas en excès" }
     }
   },
   {
     "name": "Noix",
     "category": "Fruit à coque",
+    "subCategory": "Oléagineux",
+    "subSubCategory": "Noix & amandes",
     "animalStatus": {
-      "chien": { "status": "LIMITER", "details": "Toxicité selon type" },
-      "chat": { "status": "LIMITER", "details": "En très petite quantité" },
+      "chien": { "status": "LIMITER", "details": "Toxicité selon le type" },
+      "chat": { "status": "LIMITER", "details": "Très petite quantité" },
       "rongeurs": { "status": "OK", "details": "Amandes et noisettes en petite quantité" }
     }
   },
   {
     "name": "Ail",
     "category": "Légume",
+    "subCategory": "Légume aromatique",
+    "subSubCategory": "Alliacées",
     "animalStatus": {
       "chien": { "status": "TOXIQUE", "details": "Peut provoquer anémie" },
       "chat": { "status": "TOXIQUE", "details": "Extrêmement dangereux" },
       "rongeurs": { "status": "TOXIQUE", "details": "Ne jamais donner" }
-    }
-  },
-  {
-    "name": "Banane",
-    "category": "Fruit",
-    "animalStatus": {
-      "chien": { "status": "OK", "details": "Éplucher et couper en tranches" },
-      "chat": { "status": "LIMITER", "details": "En très petite quantité" },
-      "rongeurs": { "status": "OK", "details": "Adorée par lapins et cobayes" }
-    }
-  },
-  {
-    "name": "Tomate",
-    "category": "Légume",
-    "animalStatus": {
-      "chien": { "status": "LIMITER", "details": "Ne pas donner les feuilles ou tiges" },
-      "chat": { "status": "LIMITER", "details": "Petit morceau de fruit mûr uniquement" },
-      "rongeurs": { "status": "OK", "details": "Tomate mûre seulement" }
-    }
-  },
-  {
-    "name": "Avocat",
-    "category": "Fruit",
-    "animalStatus": {
-      "chien": { "status": "TOXIQUE", "details": "Contient persine" },
-      "chat": { "status": "TOXIQUE", "details": "Très dangereux" },
-      "rongeurs": { "status": "TOXIQUE", "details": "Ne jamais donner" }
-    }
-  },
-  {
-    "name": "Poire",
-    "category": "Fruit",
-    "animalStatus": {
-      "chien": { "status": "OK", "details": "Retirer les pépins" },
-      "chat": { "status": "LIMITER", "details": "Occasionnellement" },
-      "rongeurs": { "status": "OK", "details": "Sans pépins ni trognon" }
-    }
-  },
-  {
-    "name": "Fraise",
-    "category": "Fruit",
-    "animalStatus": {
-      "chien": { "status": "OK", "details": "Couper en petits morceaux" },
-      "chat": { "status": "LIMITER", "details": "En très petite quantité" },
-      "rongeurs": { "status": "OK", "details": "Sans sucre ajouté" }
     }
   }
 ]
