@@ -8,6 +8,8 @@ const resultDiv = document.getElementById("result");
 
 let data = [];
 let selectedAnimal = "chien";
+let currentFocus = -1; // <<< MODIF : index de la suggestion active
+
 
 // Charger les données
 fetch("data.json")
@@ -39,6 +41,7 @@ animalTabs.forEach(tab => {
 
 // Filtrer suggestions
 foodInput.addEventListener("input", () => {
+  currentFocus = -1; // <<< MODIF : reset à chaque nouvelle saisie
   const query = foodInput.value.trim().toLowerCase();
   suggestionsContainer.innerHTML = "";
   if (!query) return;
@@ -58,27 +61,54 @@ foodInput.addEventListener("input", () => {
       foodInput.value = f.name;
       showResult(f);
       suggestionsContainer.innerHTML = "";
+      currentFocus = -1; // <<< MODIF : reset après clic
     });
 
     suggestionsContainer.appendChild(btn);
   });
 });
 
-// Sélection par entrée
+// Sélection avec les flêches ou entrée
 foodInput.addEventListener("keydown", e => {
-  if (e.key === "Enter") {
-    const first = suggestionsContainer.querySelector(".list-group-item");
-    if (first) {
-      const match = data.find(f => f.name === first.textContent);
-      if (match) {
-        // IMPORTANT : mettre à jour le input avec le nom exact
-        foodInput.value = match.name;
-        showResult(match);
+  const items = suggestionsContainer.querySelectorAll(".list-group-item");
+  if (!items.length) return;
+
+  if (e.key === "ArrowDown") { // flèche bas
+    e.preventDefault();
+    currentFocus++;
+    if (currentFocus >= items.length) currentFocus = 0;
+    setActive(items);
+  } else if (e.key === "ArrowUp") { // flèche haut
+    e.preventDefault();
+    currentFocus--;
+    if (currentFocus < 0) currentFocus = items.length - 1;
+    setActive(items);
+  } else if (e.key === "Enter") { // entrée
+    e.preventDefault();
+    if (currentFocus > -1) {
+      items[currentFocus].click(); // <<< MODIF : simule le clic sur la suggestion active
+    } else {
+      const first = items[0];
+      if (first) {
+        const match = data.find(f => f.name === first.textContent);
+        if (match) {
+          foodInput.value = match.name;
+          showResult(match);
+        }
       }
-      suggestionsContainer.innerHTML = "";
     }
+    suggestionsContainer.innerHTML = "";
+    currentFocus = -1; // <<< MODIF : reset
   }
 });
+
+function setActive(items) { // <<< MODIF : met en surbrillance l’élément courant
+  items.forEach(item => item.classList.remove("active"));
+  if (currentFocus >= 0 && currentFocus < items.length) {
+    items[currentFocus].classList.add("active");
+  }
+}
+
 
 // Affichage du résultat
 function showResult(food) {
@@ -109,16 +139,16 @@ function showResult(food) {
       <div class="d-flex justify-content-between align-items-center">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item">${food.category}</li>
+            <li class="breadcrumb-item"><a href="./category.html?s=${encodeURIComponent(food.category)}">${food.category}</a></li>
             ${
               food.subCategory
-                ? `<li class="breadcrumb-item">${food.subCategory}</li>`
+                ? `<li class="breadcrumb-item"><a href="./category.html?s=${encodeURIComponent(food.subCategory)}">${food.subCategory}</a></li>`
                 : ""
             }
 
             ${
               food.subSubCategory
-                ? `<li class="breadcrumb-item">${food.subSubCategory}</li>`
+                ? `<li class="breadcrumb-item"><a href="./category.html?s=${encodeURIComponent(food.subSubCategory)}">${food.subSubCategory}</a></li>`
                 : ""
             }
 
